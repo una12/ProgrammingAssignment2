@@ -1,7 +1,7 @@
-## Per the instructions in Programming Assignment 2 of the R Programming
-## class on Coursera, matrix inversion is usually a costly computation.
-## There often is benefit in caching the results of a matrix inversion 
-## rather than computing it releatedly.
+## Per Programming Assignment 2 of the R Programming class on Coursera, 
+## matrix inversion is usually a costly computation. There often is 
+## benefit in caching the results of a matrix inversion rather than 
+## computing it repeatedly.
 
 ## The makeCacheMatrix function creates a special "matrix" object that 
 ## can cache its inverse.
