@@ -1,23 +1,23 @@
-## Per Programming Assignment 2 of the R Programming class on Coursera, 
-## matrix inversion is usually a costly computation. There often is 
-## benefit in caching the results of a matrix inversion rather than 
-## computing it repeatedly.
+## Per Programming Assignment 2 of the Johns Hopkins R Programming 
+## class on Coursera, matrix inversion is usually a costly computation. 
+## There often is benefit in caching the results of a matrix inversion 
+## rather than computing it repeatedly.
 
 ## The makeCacheMatrix function creates a special "matrix" object that 
 ## can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
-m <- NULL
-set <- function(y) {
-x <<- y
-m <<- NULL
-}
-get <- function() x
-setinverse <- function(inverse) m <<- inverse
-getinverse <- function() m
-list(set = set, get = get,
-setinverse = setinverse,
-getinverse = getinverse)
+        m <- NULL
+        set <- function(y) {
+        x <<- y
+        m <<- NULL
+        }
+        get <- function() x
+        setinverse <- function(inverse) m <<- inverse
+        getinverse <- function() m
+        list(set = set, get = get,
+            setinverse = setinverse,
+            getinverse = getinverse)
 }
 
 
@@ -25,13 +25,13 @@ getinverse = getinverse)
 ## returned by makeCacheMatrix.
 
 cacheSolve <- function(x, ...) {
-m <- x$getinverse()
-if(!is.null(m)) {
-message("getting cached data")
-return(m)
-}
-data <- x$get()
-m <- solve(data, ...)
-x$setinverse(m)
-m
+        m <- x$getinverse()
+        if(!is.null(m)) {
+                message("getting cached data")
+                return(m)
+        }
+        data <- x$get()
+        m <- solve(data, ...)
+        x$setinverse(m)
+        m
 }
